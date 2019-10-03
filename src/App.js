@@ -1,8 +1,21 @@
-import React from "react";
+import React, { Component } from 'react';
 
-export default () => (
-  <>
-    <h1>Welcome to React Parcel Micro App!</h1>
-    <p>Hard to get more minimal than this React app.</p>
-  </>
-);
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      text: '',
+    };
+  }
+  render() {
+    const { text } = this.state;
+    return (
+      <div>
+        <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+        <div id="preview">{ text }</div>
+      </div>
+    );
+  }
+}
+
+export default App;
